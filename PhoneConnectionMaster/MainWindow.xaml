@@ -9,8 +9,8 @@
         Title="PhoneConnectionMaster" Height="350" Width="800">
    <Grid>
       <Grid.RowDefinitions>
+         <RowDefinition Height="5*"/>
          <RowDefinition Height="*"/>
-         <RowDefinition Height="30"/>
          <RowDefinition Height="10"/>
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
@@ -25,7 +25,7 @@
                <RowDefinition Height="*"/>
                <RowDefinition Height="10"/>
             </Grid.RowDefinitions>
-            <Label x:Name="label" Content="Connect using USB :" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Stretch"/>
+            <Label x:Name="label" Content="Connect VPN over USB:" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Stretch"/>
             <views:UsbControl x:Name="UsbControl" Grid.Row="2"/>
          </Grid>
       </Border>
@@ -42,7 +42,6 @@
             <views:TcpControl x:Name="TcpControl" Grid.Row="2"/>
             </Grid>
       </Border>
-
 
     <Button x:Name="USB_scrpy" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Content="Connect to screen" Click="ConnectToScreen_Click"/>
     <Button x:Name="TCP_scrpy" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Content="Connect to screen" Click="ConnectToScreen_Click"/>

@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="PhoneConnectionMaster.Views.BaseUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="225" d:DesignWidth="400">
+<Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="30"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="30"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Label x:Name="Title_1"  Content="Devices connected : " HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0"/>
+    <Grid HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" >
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="70"/>
+      </Grid.ColumnDefinitions>
+      <ComboBox x:Name="DevicesComboBox" Margin="10" SelectionChanged="DevicesComboBox_SelectionChanged"/>
+      <Button x:Name="RefreshDevicesButton" Margin="10" Content="Refresh" Grid.Column="1" Click="RefreshDevicesButton_Click"/>
+    </Grid>
+
+
+    <Label x:Name="Title_2" Content="Connect with title : " HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2"/>
+    <Button x:Name="connect" Margin="5" Content="Connect" IsEnabled="False" Grid.Row="3" Click="connect_Click"/>
+
+    <Button x:Name="disconnect" Margin="5" Content="Disconnect" IsEnabled="False" Grid.Row="4" Click="disconnect_Click"/>
+  </Grid>
+</UserControl>

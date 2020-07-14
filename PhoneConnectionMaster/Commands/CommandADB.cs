@@ -16,7 +16,7 @@ namespace PhoneConnectionMaster.Commands
     AdbServer server = new AdbServer();
     AdbClient AdbClient = null;
 
-    private static string AdbPath = @"C:\Users\LCH\Documents\programmation_personnel\PhoneConnectionMaster\PhoneConnectionMaster\ADB\adb.exe";
+    private static string AdbPath = @"C:\Users\LCH\Documents\programmation_personnel\phone-hub\PhoneConnectionMaster\ADB\adb.exe";
     // private string AdbPath = @"\ADB\adb.exe";
 
     public List<DeviceData> GetDevicesData()

@@ -73,12 +73,11 @@
     <Compile Include="Commands\CommandsTcp.cs" />
     <Compile Include="Commands\CommandsVpn.cs" />
     <Compile Include="Objects\DeviceInfo.cs" />
-    <Compile Include="Views\TcpControl.xaml.cs">
-      <DependentUpon>TcpControl.xaml</DependentUpon>
+    <Compile Include="Views\BaseUserControl.xaml.cs">
+      <DependentUpon>BaseUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\UsbControl.xaml.cs">
-      <DependentUpon>UsbControl.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Views\TcpControl.xaml.cs" />
+    <Compile Include="Views\UsbControl.xaml.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -91,11 +90,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\TcpControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\UsbControl.xaml">
+    <Page Include="Views\BaseUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
