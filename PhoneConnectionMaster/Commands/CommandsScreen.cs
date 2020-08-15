@@ -1,23 +1,15 @@
-﻿using PhoneConnectionMaster.Objects;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using System.Reflection;
 
 namespace PhoneConnectionMaster.Commands
 {
     public class CommandsScreen
     {
-        private string CommandStr = "Scrcpy\\scrcpy-noconsole.exe";
-        private string DefaultOptions = "--lock-video-orientation 0";
+        private string CommandStr = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Scrcpy\\scrcpy-noconsole.exe";
+        private const string DefaultOptions = "--lock-video-orientation 0 --always-on-top";
 
-        public void ConnectToScreen(string serial)
+        public void ConnectToScreen(string serial, string options = DefaultOptions)
         {
-            // Todo, add a way for the user to specify options
-            string options = DefaultOptions;
-
             Process.Start(CommandStr, $"--serial {serial} {options}");
         }
     }

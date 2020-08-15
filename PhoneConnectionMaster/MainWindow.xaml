@@ -6,11 +6,11 @@
         xmlns:views="clr-namespace:PhoneConnectionMaster.Views"
         mc:Ignorable="d"
         ResizeMode="CanResizeWithGrip"
-        Title="PhoneConnectionMaster" Height="350" Width="800">
+        Title="PhoneHub" Height="450" Width="800">
    <Grid>
       <Grid.RowDefinitions>
-         <RowDefinition Height="5*"/>
          <RowDefinition Height="*"/>
+         <RowDefinition Height="155"/>
          <RowDefinition Height="10"/>
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
@@ -42,9 +42,19 @@
             <views:TcpControl x:Name="TcpControl" Grid.Row="2"/>
             </Grid>
       </Border>
-
-    <Button x:Name="USB_scrpy" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Content="Connect to screen" Click="ConnectToScreen_Click"/>
-    <Button x:Name="TCP_scrpy" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Content="Connect to screen" Click="ConnectToScreen_Click"/>
+     
+    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Stretch" Margin="5" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Stretch">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="3"/>
+          <RowDefinition Height="30"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="3"/>
+        </Grid.RowDefinitions>
+        <Label Content="Connect screen" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Stretch"/>
+        <views:ScreenControl x:Name="ConnectControl" Grid.Row="2"/>
+      </Grid>
+    </Border>
 
   </Grid>
 </Window>

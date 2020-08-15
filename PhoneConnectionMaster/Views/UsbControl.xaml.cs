@@ -1,22 +1,6 @@
-﻿using PhoneConnectionMaster.Commands;
-using PhoneConnectionMaster.Objects;
-using SharpAdbClient;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PhoneConnectionMaster.Objects;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
 namespace PhoneConnectionMaster.Views
 {
   /// <summary>
@@ -41,6 +25,10 @@ namespace PhoneConnectionMaster.Views
           ((DeviceInfo)this.DevicesComboBox.SelectedItem).IsConnected = true;
           InverseConnectButtonEnable(true);
       }
+    }
+    override protected bool isDeviceAccepted(DeviceInfo device)
+    { 
+      return device.IsUSB; 
     }
 
     override protected void disconnect_Click(object sender, RoutedEventArgs e)

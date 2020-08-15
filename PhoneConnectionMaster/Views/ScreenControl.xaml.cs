@@ -8,14 +8,15 @@ using System.Windows.Controls;
 namespace PhoneConnectionMaster.Views
 {
   /// <summary>
-  /// Interaction logic for BaseUserControl.xaml
+  /// Interaction logic for ScreenControl.xaml
   /// </summary>
-  public partial class BaseUserControl : UserControl
+  public partial class ScreenControl : UserControl
   {
     public List<DeviceInfo> DevicesList = new List<DeviceInfo>();
     CommandADB CommandADB = new CommandADB();
+    CommandsScreen CommandsScreen = new CommandsScreen();
 
-    public BaseUserControl()
+    public ScreenControl()
     {
       InitializeComponent();
       InitializeDeviceList();
@@ -28,7 +29,7 @@ namespace PhoneConnectionMaster.Views
 
     public void InitializeDeviceList()
     {
-      DevicesList = CommandADB.GetDevicesInfo().Where(x => isDeviceAccepted(x)).ToList();
+      DevicesList = CommandADB.GetDevicesInfo().ToList();
       if (DevicesList.Count == 0)
       {
         this.DevicesComboBox.IsEnabled = false;
@@ -44,31 +45,24 @@ namespace PhoneConnectionMaster.Views
       }
     }
 
-    protected void InverseConnectButtonEnable(bool IsConnected)
+    string GetScrcpyOptions()
     {
-      this.connect.IsEnabled = !IsConnected;
-      this.disconnect.IsEnabled = IsConnected;
+      var options = "";
+      if (LockPortraitOption.IsChecked.HasValue && LockPortraitOption.IsChecked.Value)
+        options += "--lock-video-orientation 0 ";
+      if (AlwaysOnTopOption.IsChecked.HasValue && AlwaysOnTopOption.IsChecked.Value)
+        options += " --always-on-top ";
+      return options;
     }
 
-    virtual protected bool isDeviceAccepted(DeviceInfo device) { return true; }
-
-    virtual protected void connect_Click(object sender, RoutedEventArgs e) { }
-
-    virtual protected void disconnect_Click(object sender, RoutedEventArgs e) { }
-
-    virtual protected void DevicesComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    void connect_Click(object sender, RoutedEventArgs e)
     {
-      var deviceInfo = ((DeviceInfo)this.DevicesComboBox.SelectedItem);
-      if (deviceInfo != null)
-      {
-        if (deviceInfo.IsUSB)
-          InverseConnectButtonEnable(CommandsTcp.Instance.IsDeviceConnected(deviceInfo.Serial));
-        else
-          InverseConnectButtonEnable(true);
-      }
+      var device = CommandsTcp.Instance.GetDeviceSerialOrIp((DeviceInfo)this.DevicesComboBox.SelectedItem);
+      if (device != null)
+        CommandsScreen.ConnectToScreen(device, GetScrcpyOptions());
     }
 
-    protected void RefreshDevicesButton_Click(object sender, RoutedEventArgs e)
+    void RefreshDevicesButton_Click(object sender, RoutedEventArgs e)
     {
       InitializeDeviceList();
     }

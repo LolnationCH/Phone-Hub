@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{364F8578-6498-4738-A394-7CAEC87BB475}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PhoneConnectionMaster</RootNamespace>
-    <AssemblyName>PhoneConnectionMaster</AssemblyName>
+    <RootNamespace>PhoneHub</RootNamespace>
+    <AssemblyName>PhoneHub</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -76,6 +76,9 @@
     <Compile Include="Views\BaseUserControl.xaml.cs">
       <DependentUpon>BaseUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ScreenControl.xaml.cs">
+      <DependentUpon>ScreenControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TcpControl.xaml.cs" />
     <Compile Include="Views\UsbControl.xaml.cs" />
     <Page Include="MainWindow.xaml">
@@ -91,6 +94,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\BaseUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ScreenControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

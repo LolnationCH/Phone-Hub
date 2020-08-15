@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,13 +13,10 @@ namespace PhoneConnectionMaster.Commands
 {
   public sealed class CommandsTcp
   {
-
     private static CommandsTcp instance = null;
     private static readonly object padlock = new object();
 
-    CommandsTcp()
-    {
-    }
+    CommandsTcp() {}
 
     public static CommandsTcp Instance
     {
@@ -35,9 +33,9 @@ namespace PhoneConnectionMaster.Commands
       }
     }
   
-  AdbServer server = new AdbServer();
+    AdbServer server = new AdbServer();
     AdbClient AdbClient = null;
-    private string CommandStr = "ADB\\adb.exe";
+    private string CommandStr = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\ADB\\adb.exe";
 
     private Dictionary<string, DnsEndPoint> DeviceCache = new Dictionary<string, DnsEndPoint>();
     private Dictionary<string, DnsEndPoint> DevicesConnected = new Dictionary<string, DnsEndPoint>();
@@ -77,7 +75,7 @@ namespace PhoneConnectionMaster.Commands
 
     public bool IsDeviceConnected(string Serial)
     {
-        return DevicesConnected.ContainsKey(Serial);
+      return DevicesConnected.ContainsKey(Serial);
     }
 
     public void DisconnectPhone(string Serial)
@@ -108,17 +106,17 @@ namespace PhoneConnectionMaster.Commands
 
     private void StartServer()
     {
-        if (AdbClient == null)
-        {
-            var result = server.StartServer(CommandStr, restartServerIfNewer: false);
-            AdbClient = new AdbClient();
-        }
+      if (AdbClient == null)
+      {
+          var _ = server.StartServer(CommandStr, restartServerIfNewer: false);
+          AdbClient = new AdbClient();
+      }
     }
 
     private DnsEndPoint GetCacheDnsEndPoint(string serial)
     {
-        DeviceCache.TryGetValue(serial, out DnsEndPoint value);
-        return value;
+      DeviceCache.TryGetValue(serial, out DnsEndPoint value);
+      return value;
     }
   }
 }

@@ -5,19 +5,16 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace PhoneConnectionMaster.Commands
 {
   public class CommandADB
   {
-
     AdbServer server = new AdbServer();
     AdbClient AdbClient = null;
 
-    private static string AdbPath = @"C:\Users\LCH\Documents\programmation_personnel\phone-hub\PhoneConnectionMaster\ADB\adb.exe";
-    // private string AdbPath = @"\ADB\adb.exe";
+    private static string AdbPath = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\ADB\adb.exe";
 
     public List<DeviceData> GetDevicesData()
     {
