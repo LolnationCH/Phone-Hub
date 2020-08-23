@@ -4,7 +4,7 @@ Simple GUI to connect your phone to your pc
 
 ## Releases
 
-Here's the link to the latest release : [Download PhoneHub](LolnationCH/Phone-Hub/releases/latest/download/PhoneHub.zip)
+Here's the link to the latest release : [Download PhoneHub](https://github.com/LolnationCH/Phone-Hub/releases/latest/download/PhoneHub.zip)
 
 ## How it works
 
