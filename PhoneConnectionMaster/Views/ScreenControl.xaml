@@ -29,7 +29,7 @@
     <Label x:Name="Title_2" Content="Options" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0" Grid.Column="1"/>
     <StackPanel x:Name="OptionsGrid" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5,5,0,0" Grid.Column="1" Grid.RowSpan="2">
       <CheckBox Margin="0,5,0,0" x:Name="LockPortraitOption" Content="Lock screen orientation to portrait" IsChecked="True"/>
-      <CheckBox Margin="0,5,0,0" x:Name="AlwaysOnTopOption" Content="Alwsays on top" IsChecked="True"/>
+      <CheckBox Margin="0,5,0,0" x:Name="AlwaysOnTopOption" Content="Always on top" IsChecked="True" Checked="AlwaysOnTopOption_Checked"/>
     </StackPanel>
     <Button x:Name="connect" Margin="5" Content="Connect" IsEnabled="False" Grid.Row="2" Click="connect_Click"/>
   </Grid>

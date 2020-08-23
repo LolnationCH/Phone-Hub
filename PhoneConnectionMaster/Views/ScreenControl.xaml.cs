@@ -66,5 +66,10 @@ namespace PhoneConnectionMaster.Views
     {
       InitializeDeviceList();
     }
-  }
+
+        private void AlwaysOnTopOption_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+    }
 }
