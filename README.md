@@ -80,7 +80,7 @@ If everything is ready, you can launch PhoneHub.exe now.
 
 Here's the interface of the application :
 
-![phone-hub-explain.png](/phone-hub-explain.png)
+![phone-hub-explain.png](https://github.com/LolnationCH/Phone-Hub/blob/master/phone-hub-explain.PNG)
 
 ### Section 1
 
