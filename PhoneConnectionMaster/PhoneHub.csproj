@@ -125,16 +125,22 @@
     <Content Include="Scrcpy\AdbWinUsbApi.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scrcpy\avcodec-58.dll">
+    <Content Include="Scrcpy\avcodec-59.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scrcpy\avformat-58.dll">
+    <Content Include="Scrcpy\avformat-59.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scrcpy\avutil-56.dll">
+    <Content Include="Scrcpy\avutil-57.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scrcpy\scrcpy-noconsole.exe">
+    <Resource Include="Scrcpy\icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Scrcpy\msys-usb-1.0.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scrcpy\scrcpy-noconsole.vbs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Scrcpy\scrcpy.exe">
@@ -143,10 +149,10 @@
     <Content Include="Scrcpy\SDL2.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scrcpy\swresample-3.dll">
+    <Content Include="Scrcpy\swresample-4.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scrcpy\swscale-5.dll">
+    <Content Include="Scrcpy\swscale-6.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -165,6 +171,9 @@
     <Content Include="Gnirehtet\gnirehtet.apk">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Gnirehtet\gnirehtet-run.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -173,6 +182,12 @@
     <Content Include="Scrcpy\scrcpy-server">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Scrcpy\open_a_terminal_here.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scrcpy\scrcpy-console.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

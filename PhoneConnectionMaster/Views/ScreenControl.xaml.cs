@@ -49,7 +49,7 @@ namespace PhoneConnectionMaster.Views
     {
       var options = "";
       if (LockPortraitOption.IsChecked.HasValue && LockPortraitOption.IsChecked.Value)
-        options += "--lock-video-orientation 0 ";
+        options += "--lock-video-orientation=0 ";
       if (AlwaysOnTopOption.IsChecked.HasValue && AlwaysOnTopOption.IsChecked.Value)
         options += " --always-on-top ";
       return options;
